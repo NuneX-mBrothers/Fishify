@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#1a4789"/>
+<stop offset="100%" stop-color="#0a2655"/>
+</linearGradient>
+<radialGradient id="glow" cx="50%" cy="40%" r="60%">
+<stop offset="0%" stop-color="#ffffff" stop-opacity="0.18"/>
+<stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+</defs>
+<rect width="400" height="300" fill="url(#g)"/>
+<rect width="400" height="300" fill="url(#glow)"/>
+<g fill="#ffffff" opacity="0.08">
+<circle cx="60" cy="60" r="3"/><circle cx="340" cy="100" r="2"/><circle cx="80" cy="220" r="2.5"/>
+<circle cx="320" cy="230" r="3"/><circle cx="180" cy="50" r="2"/><circle cx="240" cy="270" r="2.5"/>
+</g>
+<g transform="translate(200 150)" fill="#ffffff" opacity="0.85">
+<ellipse cx="0" cy="5" rx="55" ry="35"/>
+<path d="M-55 5 Q-75 -10 -85 -25 M-70 -15 Q-80 -25 -75 -38" stroke="#ffffff" stroke-width="3" fill="none"/>
+<path d="M55 5 Q75 -10 85 -25 M70 -15 Q80 -25 75 -38" stroke="#ffffff" stroke-width="3" fill="none"/>
+<path d="M-40 30 L-50 50 M-15 38 L-20 58 M15 38 L20 58 M40 30 L50 50" stroke="#ffffff" stroke-width="3" fill="none"/>
+<circle cx="-15" cy="-5" r="4" fill="#1a4789"/>
+<circle cx="15" cy="-5" r="4" fill="#1a4789"/>
+</g>
+<text x="200" y="265" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="22" fill="#ffffff" opacity="0.95">Navalheira</text>
+</svg>

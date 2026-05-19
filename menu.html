@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Menu — Fishify · Peixe e marisco de Peniche</title>
+<meta name="description" content="Menu completo da Fishify: peixe fresco e marisco direto da Lota de Peniche. Adicione ao seu pedido e envie pelo WhatsApp." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css" rel="stylesheet" />
+<style>
+  :root {
+    --blue: #1a4789;
+    --blue-deep: #0f2e5c;
+    --blue-darker: #07182f;
+    --blue-soft: #e8f0fa;
+    --blue-mid: #4a78b8;
+    --accent: #f4a261;
+    --cream: #fbfaf6;
+    --ink: #0a1a30;
+    --ink-muted: #5a6a80;
+    --line: rgba(26, 71, 137, 0.14);
+    --display: 'Fraunces', Georgia, serif;
+    --body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--body);
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 90px;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* ---------- NAV ---------- */
+  header.nav {
+    position: sticky; top: 0;
+    background: var(--cream);
+    border-bottom: 1px solid var(--line);
+    z-index: 90;
+    padding: 14px 28px;
+  }
+  .nav-inner {
+    max-width: 1280px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 20px;
+  }
+  .brand {
+    font-family: var(--display);
+    font-weight: 500; font-size: 24px;
+    color: var(--blue-darker);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .brand .dot {
+    width: 9px; height: 9px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+  nav.primary { display: flex; gap: 28px; align-items: center; }
+  nav.primary a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 14px; font-weight: 500;
+    padding: 6px 0;
+    transition: color 0.2s;
+  }
+  nav.primary a:hover { color: var(--blue); }
+  nav.primary a.active { color: var(--blue); font-weight: 600; }
+  .nav-cta {
+    background: #25D366 !important;
+    color: white !important;
+    padding: 10px 18px !important;
+    border-radius: 999px;
+    font-size: 13px !important;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .nav-cta:hover { background: #1eb558 !important; transform: translateY(-1px); }
+
+  /* Language switcher — versão clara */
+  .nav-right { display: flex; align-items: center; gap: 16px; }
+  .lang-switcher {
+    display: flex; gap: 3px;
+    padding: 4px;
+    background: rgba(26, 71, 137, 0.06);
+    border-radius: 999px;
+    border: 1px solid var(--line);
+  }
+  .flag-btn {
+    width: 28px; height: 20px;
+    border: none; background: none; padding: 0;
+    cursor: pointer;
+    border-radius: 3px;
+    overflow: hidden;
+    display: block;
+    opacity: 0.6;
+    transition: all 0.2s ease;
+  }
+  .flag-btn:hover { opacity: 0.95; }
+  .flag-btn.active {
+    opacity: 1;
+    box-shadow: 0 0 0 2px var(--cream), 0 0 0 4px var(--blue);
+  }
+  .flag-btn svg { width: 100%; height: 100%; display: block; }
+
+  .mobile-toggle {
+    display: none;
+    background: none; border: none;
+    color: var(--blue-darker); font-size: 24px;
+    cursor: pointer; padding: 4px;
+  }
+
+  /* ---------- PAGE HEADER ---------- */
+  .page-header {
+    background: linear-gradient(135deg, var(--blue) 0%, var(--blue-deep) 100%);
+    color: white;
+    padding: 64px 28px 80px;
+    margin-bottom: -40px;
+  }
+  .page-header-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .breadcrumb {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 24px;
+  }
+  .breadcrumb a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .breadcrumb a:hover { color: var(--accent); }
+  .page-header h1 {
+    font-family: var(--display);
+    font-size: clamp(40px, 5.5vw, 64px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: white;
+    margin-bottom: 16px;
+    max-width: 800px;
+  }
+  .page-header h1 em { font-style: italic; color: var(--accent); }
+  .page-header p {
+    font-size: 17px;
+    color: rgba(255,255,255,0.85);
+    max-width: 620px;
+    line-height: 1.6;
+  }
+  .live-indicator {
+    display: inline-flex; align-items: center; gap: 10px;
+    margin-top: 18px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    color: white;
+    backdrop-filter: blur(6px);
+  }
+  .live-dot {
+    width: 8px; height: 8px;
+    background: #25D366;
+    border-radius: 50%;
+    position: relative;
+  }
+  .live-dot::after {
+    content: '';
+    position: absolute; inset: -4px;
+    border-radius: 50%;
+    background: #25D366;
+    opacity: 0.4;
+    animation: pulse 2s ease-out infinite;
+  }
+  @keyframes pulse {
+    0% { transform: scale(0.8); opacity: 0.5; }
+    100% { transform: scale(2); opacity: 0; }
+  }
+
+  /* ---------- CONTROLS ---------- */
+  .controls-wrap {
+    position: sticky;
+    top: 67px;
+    z-index: 50;
+    background: var(--cream);
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 4px 20px rgba(7,24,47,0.04);
+  }
+  .controls {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .search-box {
+    flex: 1;
+    min-width: 240px;
+    max-width: 420px;
+    position: relative;
+  }
+  .search-box i {
+    position: absolute;
+    left: 16px; top: 50%;
+    transform: translateY(-50%);
+    color: var(--ink-muted);
+    font-size: 18px;
+  }
+  .search-box input {
+    width: 100%;
+    padding: 13px 16px 13px 46px;
+    border: 1.5px solid var(--line);
+    border-radius: 999px;
+    font-family: var(--body);
+    font-size: 14px;
+    background: white;
+    color: var(--ink);
+    transition: all 0.2s ease;
+  }
+  .search-box input::placeholder { color: var(--ink-muted); }
+  .search-box input:focus {
+    outline: none;
+    border-color: var(--blue);
+    box-shadow: 0 0 0 4px rgba(26, 71, 137, 0.1);
+  }
+  .filter-chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .chip {
+    background: white;
+    border: 1.5px solid var(--line);
+    color: var(--ink);
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-family: var(--body);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .chip:hover { border-color: var(--blue); color: var(--blue); }
+  .chip.active {
+    background: var(--blue);
+    color: white;
+    border-color: var(--blue);
+  }
+
+  /* ---------- PRODUCT LIST ---------- */
+  main {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 60px 28px 40px;
+  }
+  .category {
+    margin-bottom: 64px;
+  }
+  .category-head {
+    margin-bottom: 28px;
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap;
+  }
+  .category h2 {
+    font-family: var(--display);
+    font-size: clamp(28px, 3vw, 38px);
+    font-weight: 400;
+    color: var(--blue-darker);
+    letter-spacing: -0.02em;
+  }
+  .category h2 em { font-style: italic; color: var(--blue); }
+  .category-count {
+    font-size: 13px;
+    color: var(--ink-muted);
+    font-weight: 500;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .product {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+  .product:hover {
+    border-color: var(--blue-mid);
+    box-shadow: 0 10px 30px rgba(26, 71, 137, 0.08);
+    transform: translateY(-2px);
+  }
+  .product.in-cart {
+    border-color: var(--blue);
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, var(--blue), var(--blue-mid)) border-box;
+    border: 1.5px solid transparent;
+  }
+  .product-img {
+    width: 92px; height: 92px;
+    border-radius: 12px;
+    overflow: hidden;
+    background:
+      /* Fallback: ícone peixe SVG no centro + degradé azul */
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><g fill='%231a4789' opacity='0.35'><path d='M10 32 Q14 18 32 18 Q50 18 56 32 Q50 46 32 46 Q14 46 10 32 Z'/><path d='M50 32 L60 22 L60 42 Z' fill='%231a4789' opacity='0.4'/><circle cx='22' cy='28' r='2' fill='%23ffffff'/></g></svg>") center/50% no-repeat,
+      linear-gradient(135deg, #e8f0fa 0%, #c8dcf2 100%);
+    flex-shrink: 0;
+    position: relative;
+  }
+  .product-img img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+  }
+  /* Quando a imagem falha (atributo broken), esconde-a e mostra o fallback */
+  .product-img img.broken {
+    opacity: 0;
+  }
+  .product-badge {
+    position: absolute;
+    top: 6px; left: 6px;
+    background: rgba(255,255,255,0.95);
+    color: var(--blue);
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 3px 7px;
+    border-radius: 999px;
+  }
+  .product-badge.hot {
+    background: var(--accent);
+    color: var(--blue-darker);
+  }
+  .product-info {
+    flex: 1;
+    min-width: 0;
+  }
+  .product-info h3 {
+    font-family: var(--display);
+    font-size: 19px;
+    font-weight: 500;
+    color: var(--blue-darker);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  .product-note {
+    font-size: 12px;
+    color: var(--ink-muted);
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .product-price {
+    font-family: var(--display);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--blue);
+  }
+  .product-price-unit {
+    font-family: var(--body);
+    font-size: 12px;
+    color: var(--ink-muted);
+    font-weight: 400;
+  }
+  .product-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+  }
+  .qty-control {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 3px;
+  }
+  .qty-control button {
+    width: 28px; height: 28px;
+    border: none;
+    background: none;
+    color: var(--blue);
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.15s ease;
+  }
+  .qty-control button:hover { background: var(--blue-soft); }
+  .qty-control button:disabled {
+    color: var(--ink-muted);
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+  .qty-control input {
+    width: 42px;
+    text-align: center;
+    border: none;
+    background: none;
+    font-family: var(--body);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--blue-darker);
+    -moz-appearance: textfield;
+  }
+  .qty-control input::-webkit-outer-spin-button,
+  .qty-control input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .btn-add {
+    background: var(--blue);
+    color: white;
+    border: none;
+    padding: 9px 16px;
+    border-radius: 999px;
+    font-family: var(--body);
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+  }
+  .btn-add:hover {
+    background: var(--blue-deep);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(26, 71, 137, 0.3);
+  }
+  .btn-add.added {
+    background: #25D366;
+  }
+
+  /* Empty state */
+  .empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--ink-muted);
+  }
+  .empty i { font-size: 56px; color: var(--blue-soft); margin-bottom: 16px; display: block; }
+  .empty h3 {
+    font-family: var(--display);
+    font-size: 22px;
+    color: var(--blue-darker);
+    margin-bottom: 8px;
+  }
+
+  /* ---------- NOTES ---------- */
+  .notes {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 32px 36px;
+    margin-top: 60px;
+  }
+  .notes h3 {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--blue-darker);
+    margin-bottom: 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .notes h3 i { color: var(--blue); font-size: 24px; }
+  .notes ul {
+    list-style: none;
+    padding: 0;
+  }
+  .notes li {
+    padding: 10px 0;
+    color: var(--ink-muted);
+    font-size: 14px;
+    line-height: 1.65;
+    display: flex; align-items: flex-start; gap: 10px;
+    border-bottom: 1px solid var(--line);
+  }
+  .notes li:last-child { border-bottom: none; }
+  .notes li::before {
+    content: '•';
+    color: var(--blue);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* ---------- ORDER BAR (sticky bottom) ---------- */
+  .order-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--blue-darker);
+    color: white;
+    padding: 16px 28px;
+    z-index: 90;
+    transform: translateY(110%);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 -10px 40px rgba(7, 24, 47, 0.3);
+  }
+  .order-bar.visible { transform: translateY(0); }
+  .order-bar-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .order-summary {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .order-count {
+    background: var(--accent);
+    color: var(--blue-darker);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .order-total {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 500;
+    color: white;
+  }
+  .order-total-label {
+    display: block;
+    font-family: var(--body);
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 2px;
+    font-weight: 500;
+  }
+  .order-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .btn-clear {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 12px 18px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    font-family: var(--body);
+  }
+  .btn-clear:hover { background: rgba(255,255,255,0.2); }
+  .btn-send {
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    padding: 13px 24px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+  }
+  .btn-send:hover {
+    background: #1eb558;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(37,211,102,0.4);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    background: var(--blue-darker);
+    color: rgba(255,255,255,0.7);
+    padding: 60px 28px 32px;
+    margin-top: 40px;
+  }
+  .foot-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .foot-inner .brand { color: white; }
+  .foot-inner p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 960px) {
+    .nav-inner { padding: 0; gap: 10px; }
+    nav.primary { display: none; }
+    .mobile-toggle { display: block; }
+    .nav-right { gap: 10px; }
+    .lang-switcher { padding: 3px; gap: 2px; }
+    .flag-btn { width: 22px; height: 16px; }
+    .page-header { padding: 48px 20px 60px; }
+    .controls-wrap { padding: 16px 20px; top: 60px; }
+    main { padding: 50px 20px 30px; }
+    .product-grid { grid-template-columns: 1fr; gap: 10px; }
+    .order-bar { padding: 14px 20px; }
+    .order-bar-inner { gap: 12px; }
+    .order-summary { gap: 14px; flex: 1; min-width: 0; }
+    .order-total { font-size: 18px; }
+    .order-actions .btn-clear { display: none; }
+    .btn-send { padding: 12px 18px; font-size: 13px; }
+    .notes { padding: 24px 20px; }
+    body { padding-bottom: 80px; }
+  }
+  @media (max-width: 380px) {
+    .flag-btn { width: 18px; height: 13px; }
+    .lang-switcher { padding: 2px; gap: 1px; }
+  }
+  @media (max-width: 520px) {
+    .product { padding: 12px; gap: 12px; }
+    .product-img { width: 78px; height: 78px; }
+    .product-info h3 { font-size: 17px; }
+    .qty-control input { width: 36px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><span class="dot" aria-hidden="true"></span>fishify</a>
+
+    <nav class="primary" aria-label="Menu principal">
+      <a href="index.html#sobre" data-i18n="nav.about">Sobre nós</a>
+      <a href="index.html#como" data-i18n="nav.how">Como funciona</a>
+      <a href="menu.html" class="active" data-i18n="nav.menu">Menu</a>
+      <a href="index.html#faq" data-i18n="nav.faq">Perguntas</a>
+      <a href="https://wa.me/351934243797" class="nav-cta" target="_blank" rel="noopener">
+        <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> <span data-i18n="nav.order">Encomendar</span>
+      </a>
+    </nav>
+
+    <div class="nav-right">
+      <div class="lang-switcher" role="group" aria-label="Language / Idioma"></div>
+      <button class="mobile-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <i class="ti ti-menu-2" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ PAGE HEADER ============ -->
+<section class="page-header">
+  <div class="page-header-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html" data-i18n="menu.breadcrumb.home">Início</a>
+      <i class="ti ti-chevron-right" aria-hidden="true" style="font-size:14px"></i>
+      <span data-i18n="menu.breadcrumb.current">Menu</span>
+    </nav>
+    <h1 data-i18n="menu.title">O nosso <em>menu</em>.</h1>
+    <p data-i18n="menu.sub">Peixe e marisco direto da Lota de Peniche. Adiciona os teus favoritos e nós preparamos a mensagem para enviares no WhatsApp.</p>
+    <div class="live-indicator">
+      <span class="live-dot" aria-hidden="true"></span>
+      <span data-i18n="menu.updated">Atualizado hoje às 09:30</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTROLS ============ -->
+<div class="controls-wrap">
+  <div class="controls">
+    <div class="search-box">
+      <i class="ti ti-search" aria-hidden="true"></i>
+      <input type="search" id="search" placeholder="Pesquisar: robalo, sapateira, polvo…" data-i18n-attr="placeholder:menu.search.placeholder|aria-label:menu.search.aria" aria-label="Pesquisar peixe ou marisco" />
+    </div>
+    <div class="filter-chips" role="group" aria-label="Filtros">
+      <button class="chip active" data-filter="all" data-i18n="menu.filter.all">Tudo</button>
+      <button class="chip" data-filter="peixe" data-i18n="menu.filter.peixe">Peixe</button>
+      <button class="chip" data-filter="marisco" data-i18n="menu.filter.marisco">Marisco</button>
+      <button class="chip" data-filter="featured" data-i18n="menu.filter.featured">Hoje</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PRODUCTS ============ -->
+<main id="products-root">
+  <!-- Categorias e produtos injetados via JS -->
+</main>
+
+<!-- ============ NOTES ============ -->
+<section style="max-width:1280px;margin:0 auto;padding:0 28px 40px;">
+  <div class="notes">
+    <h3><i class="ti ti-info-circle" aria-hidden="true"></i> <span data-i18n="menu.notes.title">Informações importantes</span></h3>
+    <ul>
+      <li data-i18n="menu.notes.1">Os preços podem variar consoante o pescado capturado diariamente na Lota de Peniche.</li>
+      <li data-i18n="menu.notes.2">A preparação do peixe é gratuita: inteiro, escalado, em filetes ou às postas, conforme preferir.</li>
+      <li data-i18n="menu.notes.3">Todo o peixe é pesado antes de ser eviscerado.</li>
+      <li data-i18n="menu.notes.4">Entrega gratuita para encomendas acima de 45€. Encomendas inferiores: taxa de entrega de 4,99€.</li>
+      <li data-i18n="menu.notes.5">IVA incluído à taxa legal em vigor.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ ORDER BAR ============ -->
+<div class="order-bar" id="orderBar" role="region" aria-label="A sua encomenda">
+  <div class="order-bar-inner">
+    <div class="order-summary">
+      <span class="order-count" id="orderCount">0 <span data-i18n="menu.order.selected">selecionados</span></span>
+      <div>
+        <span class="order-total-label" data-i18n="menu.order.total">Total estimado:</span>
+        <span class="order-total" id="orderTotal">0,00 €</span>
+      </div>
+    </div>
+    <div class="order-actions">
+      <button class="btn-clear" id="btnClear" data-i18n="menu.order.clear">Limpar</button>
+      <a href="#" class="btn-send" id="btnSend" target="_blank" rel="noopener">
+        <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
+        <span data-i18n="menu.order.send">Enviar encomenda</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="foot-inner">
+    <a href="index.html" class="brand"><span class="dot" aria-hidden="true"></span>fishify</a>
+    <p data-i18n="foot.rights">© 2026 Fishify. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script src="i18n.js"></script>
+<script>
+// =================================================================
+// PRODUCT CATALOG — preços e dados da Fishify
+// Nomes dos produtos ficam em Português (espécies regionais)
+// =================================================================
+const products = [
+  // ---------- MARISCO ----------
+  { id:'amrl', nameKey:'fish.amrl', name:'Amêijoa-real', cat:'marisco', price:47, img:'https://fishify.pt/wp-content/uploads/2021/04/Ameijoa-boa.png', fallback:'imgs/Ameijoa-boa.svg' },
+  { id:'amjp', nameKey:'fish.amjp', name:'Amêijoa-japónica', cat:'marisco', price:24, img:'https://fishify.pt/wp-content/uploads/2021/04/ameijoa-japonesa.png', fallback:'imgs/ameijoa-japonesa.svg' },
+  { id:'perc', nameKey:'fish.perc', name:'Percebes', cat:'marisco', price:55, featured:true, img:'https://fishify.pt/wp-content/uploads/2021/05/percebes.png', fallback:'imgs/percebes.svg' },
+  { id:'cmfr', nameKey:'fish.cmfr', name:'Camarão fresco', cat:'marisco', price:22, note:'20-30 un.', today:true, img:'https://fishify.pt/wp-content/uploads/2021/05/d6d64636105d87bdaecd81b6ad77b3ca.jpg', fallback:'imgs/d6d64636105d87bdaecd81b6ad77b3ca.svg' },
+  { id:'cmtg', nameKey:'fish.cmtg', name:'Camarão-tigre', cat:'marisco', price:55, img:'https://fishify.pt/wp-content/uploads/2026/01/camarao-de-mocambique-tigre-gigante-pescanova-1024x1024.jpg', fallback:'imgs/camarao-de-mocambique-tigre-gigante-pescanova-1024x1024.svg' },
+  { id:'lgst', nameKey:'fish.lgst', name:'Lagosta Nacional', cat:'marisco', price:100, featured:true, img:'https://fishify.pt/wp-content/uploads/2021/04/lagosta_castanha.jpg', fallback:'imgs/lagosta_castanha.svg' },
+  { id:'lvgt', nameKey:'fish.lvgt', name:'Lavagante', cat:'marisco', price:85, featured:true, img:'https://fishify.pt/wp-content/uploads/2021/04/Lavagante-1024x682.png', fallback:'imgs/Lavagante-1024x682.svg' },
+  { id:'lngr', nameKey:'fish.lngr', name:'Lingueirão', cat:'marisco', price:25, img:'https://fishify.pt/wp-content/uploads/2021/04/Lingueirao.jpg', fallback:'imgs/Lingueirao.svg' },
+  { id:'berb', nameKey:'fish.berb', name:'Berbigão', cat:'marisco', price:12, img:'https://fishify.pt/wp-content/uploads/2021/05/berbigao-600x400-1.jpg', fallback:'imgs/berbigao-600x400-1.svg' },
+  { id:'mexl', nameKey:'fish.mexl', name:'Mexilhão', cat:'marisco', price:8, today:true, img:'https://fishify.pt/wp-content/uploads/2021/04/Mexilhao.png', fallback:'imgs/Mexilhao.svg' },
+  { id:'nvlh', nameKey:'fish.nvlh', name:'Navalheira', cat:'marisco', price:30, img:'https://fishify.pt/wp-content/uploads/2021/04/Navalheira.png', fallback:'imgs/Navalheira.svg' },
+  { id:'ostr', nameKey:'fish.ostr', name:'Ostra', cat:'marisco', price:16, img:'https://fishify.pt/wp-content/uploads/2021/04/Ostra.png', fallback:'imgs/Ostra.svg' },
+  { id:'sntl', nameKey:'fish.sntl', name:'Santola', cat:'marisco', price:30, img:'https://fishify.pt/wp-content/uploads/2021/04/Santola.png', fallback:'imgs/Santola.svg' },
+  { id:'sptr', nameKey:'fish.sptr', name:'Sapateira', cat:'marisco', price:28, today:true, img:'https://fishify.pt/wp-content/uploads/2021/04/Sapateira.png', fallback:'imgs/Sapateira.svg' },
+
+  // ---------- PEIXE ----------
+  { id:'sard', nameKey:'fish.sard', name:'Sardinha', cat:'peixe', price:8, today:true, img:'https://fishify.pt/wp-content/uploads/2021/05/Sardinha.png', fallback:'imgs/Sardinha.svg' },
+  { id:'crpm', nameKey:'fish.crpm', name:'Carapau-médio', cat:'peixe', price:9, note:'200-400 gr', img:'https://fishify.pt/wp-content/uploads/2021/04/Carapau.png', fallback:'imgs/Carapau.svg' },
+  { id:'chic', nameKey:'fish.chic', name:'Chicharro', cat:'peixe', price:12, note:'400-600 gr', img:'https://fishify.pt/wp-content/uploads/2021/05/000004280_558_440.jpg', fallback:'imgs/000004280_558_440.svg' },
+  { id:'crpz', nameKey:'fish.crpz', name:'Carapauzinhos', cat:'peixe', price:15, note:'40-60 peças', img:'https://fishify.pt/wp-content/uploads/2021/05/05218232001596____4__600x600.jpg', fallback:'imgs/05218232001596____4__600x600.svg' },
+  { id:'fane', nameKey:'fish.fane', name:'Fanecas', cat:'peixe', price:10, img:'https://fishify.pt/wp-content/uploads/2026/04/05218231001845____10__600x600.jpg', fallback:'imgs/05218231001845____10__600x600.svg' },
+  { id:'cval', nameKey:'fish.cval', name:'Cavala', cat:'peixe', price:9, note:'400-600 gr', img:'https://fishify.pt/wp-content/uploads/2021/04/Cavala.png', fallback:'imgs/Cavala.svg' },
+  { id:'sard2', nameKey:'fish.sard2', name:'Sarda', cat:'peixe', price:12, note:'400-600 gr', img:'https://fishify.pt/wp-content/uploads/2021/05/sarda-1024x682.png', fallback:'imgs/sarda-1024x682.svg' },
+  { id:'serr', nameKey:'fish.serr', name:'Serrajão', cat:'peixe', price:18, note:'1-3 kg', img:'https://fishify.pt/wp-content/uploads/2026/04/p1674225343.png', fallback:'imgs/p1674225343.svg' },
+  { id:'chrn', nameKey:'fish.chrn', name:'Cherne', cat:'peixe', price:60, featured:true, img:'https://fishify.pt/wp-content/uploads/2021/04/Cherne.png', fallback:'imgs/Cherne.svg' },
+  { id:'mero', nameKey:'fish.mero', name:'Mero', cat:'peixe', price:35, img:'https://fishify.pt/wp-content/uploads/2021/05/77-0.jpg', fallback:'imgs/77-0.svg' },
+  { id:'pxpr', nameKey:'fish.pxpr', name:'Peixe-porco', cat:'peixe', price:16, img:'https://fishify.pt/wp-content/uploads/2026/01/peixe-porco-1-1024x667.png', fallback:'imgs/peixe-porco-1-1024x667.svg' },
+  { id:'rasc', nameKey:'fish.rasc', name:'Rascasso', cat:'peixe', price:45, img:'https://fishify.pt/wp-content/uploads/2026/01/Scorpaena-Scrofa-Rocaz_Rascasso-RSE.png', fallback:'imgs/Scorpaena-Scrofa-Rocaz_Rascasso-RSE.svg' },
+  { id:'chct', nameKey:'fish.chct', name:'Chocos c/tinta', cat:'peixe', price:25, note:'200-400 gr', img:'https://fishify.pt/wp-content/uploads/2021/05/choco-fresco1-600x600-2.jpg', fallback:'imgs/choco-fresco1-600x600-2.svg' },
+  { id:'chcl', nameKey:'fish.chcl', name:'Choco limpo', cat:'peixe', price:19, note:'1.2-2.5 kg', img:'https://fishify.pt/wp-content/uploads/2021/05/choco.png', fallback:'imgs/choco.svg' },
+  { id:'corv', nameKey:'fish.corv', name:'Corvina', cat:'peixe', price:25, img:'https://fishify.pt/wp-content/uploads/2021/04/Corvina.png', fallback:'imgs/Corvina.svg' },
+  { id:'dour', nameKey:'fish.dour', name:'Dourada Nacional', cat:'peixe', priceFrom:18, priceTo:25, note:'400 gr–1.5 kg', today:true, img:'https://fishify.pt/wp-content/uploads/2021/05/dourada_mar-1024x765.png', fallback:'imgs/dourada_mar-1024x765.svg' },
+  { id:'espd', nameKey:'fish.espd', name:'Bifes Espadarte', cat:'peixe', price:23, img:'https://fishify.pt/wp-content/uploads/2021/05/05218246600011____13__600x600.jpg', fallback:'imgs/05218246600011____13__600x600.svg' },
+  { id:'atun', nameKey:'fish.atun', name:'Bifes Atum', cat:'peixe', price:23, img:'https://fishify.pt/wp-content/uploads/2021/05/img9.jpg', fallback:'imgs/img9.svg' },
+  { id:'gora', nameKey:'fish.gora', name:'Goraz', cat:'peixe', priceFrom:36, priceTo:55, featured:true, img:'https://fishify.pt/wp-content/uploads/2021/04/Goraz.png', fallback:'imgs/Goraz.svg' },
+  { id:'lirio', nameKey:'fish.lirio', name:'Lírio', cat:'peixe', price:35, img:'https://fishify.pt/wp-content/uploads/2026/04/images-3.jpeg', fallback:'imgs/images-3.svg' },
+  { id:'imcl', nameKey:'fish.imcl', name:'Imperador costa-larga', cat:'peixe', price:85, featured:true, img:'https://fishify.pt/wp-content/uploads/2021/04/imperador-04.jpg', fallback:'imgs/imperador-04.svg' },
+  { id:'imce', nameKey:'fish.imce', name:'Imperador costa-estreita', cat:'peixe', price:45, img:'https://fishify.pt/wp-content/uploads/2021/05/salongo-1024x456.png', fallback:'imgs/salongo-1024x456.svg' },
+  { id:'rodv', nameKey:'fish.rodv', name:'Rodovalho', cat:'peixe', price:40, img:'https://fishify.pt/wp-content/uploads/2026/04/000221611-1024x766.jpg', fallback:'imgs/000221611-1024x766.svg' },
+  { id:'ling', nameKey:'fish.ling', name:'Linguado', cat:'peixe', priceFrom:40, priceTo:45, img:'https://fishify.pt/wp-content/uploads/2021/04/Linguado.png', fallback:'imgs/Linguado.svg' },
+  { id:'lula', nameKey:'fish.lula', name:'Lulas', cat:'peixe', price:30, img:'https://fishify.pt/wp-content/uploads/2021/04/Lula.png', fallback:'imgs/Lula.svg' },
+  { id:'pota', nameKey:'fish.pota', name:'Potas', cat:'peixe', price:16, img:'https://fishify.pt/wp-content/uploads/2021/05/pota-entera-argentina-1.jpg', fallback:'imgs/pota-entera-argentina-1.svg' },
+  { id:'trpt', nameKey:'fish.trpt', name:'Tiras de Pota', cat:'peixe', price:15, img:'https://fishify.pt/wp-content/uploads/2021/05/TIRAS_POTA_2-1024x683.jpg', fallback:'imgs/TIRAS_POTA_2-1024x683.svg' },
+  { id:'prgl', nameKey:'fish.prgl', name:'Pargo-legítimo', cat:'peixe', price:38, img:'https://fishify.pt/wp-content/uploads/2021/04/pargo_legitimo-1024x765.png', fallback:'imgs/pargo_legitimo-1024x765.svg' },
+  { id:'prgs', nameKey:'fish.prgs', name:'Pargo-sêmola', cat:'peixe', price:30, img:'https://fishify.pt/wp-content/uploads/2021/05/pargo_semola-1024x683.png', fallback:'imgs/pargo_semola-1024x683.svg' },
+  { id:'prgm', nameKey:'fish.prgm', name:'Pargo-mulato', cat:'peixe', price:18, img:'https://fishify.pt/wp-content/uploads/2021/05/images.jpg', fallback:'imgs/images.svg' },
+  { id:'pxeb', nameKey:'fish.pxeb', name:'Peixe-espada Branco', cat:'peixe', price:24, img:'https://fishify.pt/wp-content/uploads/2026/04/images.jpeg', fallback:'imgs/images.svg' },
+  { id:'pxep', nameKey:'fish.pxep', name:'Peixe-espada Preto', cat:'peixe', price:18, img:'https://fishify.pt/wp-content/uploads/2026/04/Px-Espada-Preto2_site.jpg', fallback:'imgs/Px-Espada-Preto2_site.svg' },
+  { id:'gln', nameKey:'fish.gln', name:'Galo-negro', cat:'peixe', price:33, img:'https://fishify.pt/wp-content/uploads/2021/04/Peixe-Galo.png', fallback:'imgs/Peixe-Galo.svg' },
+  { id:'pscb', nameKey:'fish.pscb', name:'Pescada-branca', cat:'peixe', price:19, img:'https://fishify.pt/wp-content/uploads/2021/04/Pescada-Branca.png', fallback:'imgs/Pescada-Branca.svg' },
+  { id:'abrt', nameKey:'fish.abrt', name:'Abrótea', cat:'peixe', price:18, img:'https://fishify.pt/wp-content/uploads/2026/04/images-2.jpeg', fallback:'imgs/images-2.svg' },
+  { id:'ovps', nameKey:'fish.ovps', name:'Ovas de Pescada', cat:'peixe', price:30, img:'https://fishify.pt/wp-content/uploads/2021/05/05218235000330____1__600x600.jpg', fallback:'imgs/05218235000330____1__600x600.svg' },
+  { id:'pscd', nameKey:'fish.pscd', name:'Pescadinhas', cat:'peixe', price:12, img:'https://fishify.pt/wp-content/uploads/2021/05/PescadinhaRaboBoca-01-300x214-1.jpg', fallback:'imgs/PescadinhaRaboBoca-01-300x214-1.svg' },
+  { id:'polv', nameKey:'fish.polv', name:'Polvo', cat:'peixe', priceFrom:19, priceTo:22, note:'1 kg–+1.5 kg', today:true, img:'https://fishify.pt/wp-content/uploads/2021/04/Polvo.png', fallback:'imgs/Polvo.svg' },
+  { id:'preg', nameKey:'fish.preg', name:'Pregado', cat:'peixe', price:33, img:'https://fishify.pt/wp-content/uploads/2021/04/Pregado.jpg', fallback:'imgs/Pregado.svg' },
+  { id:'roba', nameKey:'fish.roba', name:'Robalo Nacional', cat:'peixe', priceFrom:18, priceTo:33, note:'400 gr – +2 kg', today:true, img:'https://fishify.pt/wp-content/uploads/2021/04/Robalo.png', fallback:'imgs/Robalo.svg' },
+  { id:'safi', nameKey:'fish.safi', name:'Safio', cat:'peixe', price:16, img:'https://fishify.pt/wp-content/uploads/2021/04/Safio.png', fallback:'imgs/Safio.svg' },
+  { id:'cald', nameKey:'fish.cald', name:'Caldeirada', cat:'peixe', price:18, note:'Safio, Raia, Tamboril, Cação, Ruivo, Cantaril', img:'https://fishify.pt/wp-content/uploads/2021/05/caldeirada-768x1024.png', fallback:'imgs/caldeirada-768x1024.svg' },
+  { id:'salm', nameKey:'fish.salm', name:'Salmão', cat:'peixe', price:23, img:'https://fishify.pt/wp-content/uploads/2021/05/Salmao_fishify.png', fallback:'imgs/Salmao_fishify.svg' },
+  { id:'slmt', nameKey:'fish.slmt', name:'Salmonete', cat:'peixe', price:40, img:'https://fishify.pt/wp-content/uploads/2021/04/Salmonete.png', fallback:'imgs/Salmonete.svg' },
+  { id:'sarg', nameKey:'fish.sarg', name:'Sargo', cat:'peixe', price:30, img:'https://fishify.pt/wp-content/uploads/2021/05/sargo.png', fallback:'imgs/sargo.svg' },
+  { id:'tamb', nameKey:'fish.tamb', name:'Tamboril', cat:'peixe', priceFrom:23, priceTo:35, note:'inteiro ou lombo limpo', img:'https://fishify.pt/wp-content/uploads/2021/04/Tamboril.png', fallback:'imgs/Tamboril.svg' },
+  { id:'cant', nameKey:'fish.cant', name:'Cantaril', cat:'peixe', priceFrom:28, priceTo:35, img:'https://fishify.pt/wp-content/uploads/2021/04/Cantaril.png', fallback:'imgs/Cantaril.svg' },
+  { id:'garp', nameKey:'fish.garp', name:'Garoupa', cat:'peixe', priceFrom:30, priceTo:35, img:'https://fishify.pt/wp-content/uploads/2021/05/Garoupa.jpg', fallback:'imgs/Garoupa.svg' },
+  { id:'pamp', nameKey:'fish.pamp', name:'Pampo', cat:'peixe', price:22, img:'https://fishify.pt/wp-content/uploads/2021/05/pampano.png', fallback:'imgs/pampano.svg' },
+  { id:'perc2', nameKey:'fish.perc2', name:'Perca', cat:'peixe', price:17, img:'https://fishify.pt/wp-content/uploads/2021/05/unnamed.jpg', fallback:'imgs/unnamed.svg' },
+  { id:'besg', nameKey:'fish.besg', name:'Besugo', cat:'peixe', price:15, img:'https://fishify.pt/wp-content/uploads/2021/05/besugo-04.jpg', fallback:'imgs/besugo-04.svg' },
+  { id:'raia', nameKey:'fish.raia', name:'Raia', cat:'peixe', price:17, img:'https://fishify.pt/wp-content/uploads/2021/05/5218236000453000g01011.jpg', fallback:'imgs/5218236000453000g01011.svg' },
+  { id:'caca', nameKey:'fish.caca', name:'Cação', cat:'peixe', price:18, img:'https://fishify.pt/wp-content/uploads/2021/05/Cacao.jpg', fallback:'imgs/Cacao.svg' },
+  { id:'espt', nameKey:'fish.espt', name:'Espetadas', cat:'peixe', priceFrom:25, priceTo:27, note:'pampo+salmão+choco / espadarte+choco+salmão', img:'https://fishify.pt/wp-content/uploads/2021/05/espetada.png', fallback:'imgs/espetada.svg' },
+];
+
+// =================================================================
+// CART STATE
+// =================================================================
+const cart = new Map(); // id -> qty (in kg)
+
+function formatPrice(p) {
+  if (p.priceFrom !== undefined) return `${p.priceFrom}-${p.priceTo}€`;
+  return `${p.price}€`;
+}
+
+function unitPrice(p) {
+  // Para totais usamos o preço base (priceFrom se intervalo)
+  return p.priceFrom !== undefined ? p.priceFrom : p.price;
+}
+
+// =================================================================
+// HELPERS — translated display name (falls back to PT if missing)
+// =================================================================
+function displayName(p) {
+  return p.nameKey ? t(p.nameKey) : p.name;
+}
+
+// =================================================================
+// RENDER
+// =================================================================
+function render() {
+  const root = document.getElementById('products-root');
+  const query = document.getElementById('search').value.trim().toLowerCase();
+  const activeFilter = document.querySelector('.chip.active').dataset.filter;
+
+  let filtered = products.filter(p => {
+    // Pesquisa em ambos: nome PT (sempre) e nome traduzido
+    if (query) {
+      const matches = p.name.toLowerCase().includes(query)
+                   || displayName(p).toLowerCase().includes(query);
+      if (!matches) return false;
+    }
+    if (activeFilter === 'peixe' && p.cat !== 'peixe') return false;
+    if (activeFilter === 'marisco' && p.cat !== 'marisco') return false;
+    if (activeFilter === 'featured' && !p.today && !p.featured) return false;
+    return true;
+  });
+
+  if (filtered.length === 0) {
+    root.innerHTML = `
+      <div class="empty">
+        <i class="ti ti-fish-off" aria-hidden="true"></i>
+        <h3>${t('menu.empty.title')}</h3>
+        <p>${t('menu.empty.desc')} "${query}"</p>
+      </div>`;
+    return;
+  }
+
+  // Agrupar por categoria (quando filtro = all)
+  let html = '';
+  if (activeFilter === 'all' || activeFilter === 'featured') {
+    if (activeFilter === 'featured') {
+      html += renderCategory(t('menu.cat.featured'), filtered);
+    } else {
+      const marisco = filtered.filter(p => p.cat === 'marisco');
+      const peixe = filtered.filter(p => p.cat === 'peixe');
+      if (marisco.length) html += renderCategory(t('menu.cat.marisco'), marisco);
+      if (peixe.length) html += renderCategory(t('menu.cat.peixe'), peixe);
+    }
+  } else {
+    const title = activeFilter === 'peixe' ? t('menu.cat.peixe') : t('menu.cat.marisco');
+    html += renderCategory(title, filtered);
+  }
+
+  root.innerHTML = html;
+  attachProductListeners();
+}
+
+function renderCategory(title, items) {
+  return `
+    <section class="category">
+      <div class="category-head">
+        <h2>${title}</h2>
+        <span class="category-count">${items.length} ${t('menu.cat.products')}</span>
+      </div>
+      <div class="product-grid">
+        ${items.map(renderProduct).join('')}
+      </div>
+    </section>
+  `;
+}
+
+function renderProduct(p) {
+  const inCart = cart.has(p.id);
+  const qty = cart.get(p.id) || 1;
+  const name = displayName(p);
+  const badge = p.today
+    ? `<span class="product-badge hot">${t('catch.tag.today')}</span>`
+    : p.featured
+    ? `<span class="product-badge">${t('catch.tag.featured')}</span>`
+    : '';
+  return `
+    <article class="product ${inCart ? 'in-cart' : ''}" data-id="${p.id}">
+      <div class="product-img">
+        ${badge}
+        <img src="${p.img}" alt="${name}" loading="lazy" onerror="if(this.src!==location.origin+'/'+this.dataset.fallback && !this.dataset.fallbackTried){this.dataset.fallbackTried='1';this.src=this.dataset.fallback;}else{this.classList.add('broken')}" data-fallback="${p.fallback || ''}" />
+      </div>
+      <div class="product-info">
+        <h3>${name}</h3>
+        ${p.note ? `<div class="product-note">${p.note}</div>` : ''}
+        <div class="product-price">${formatPrice(p)} <span class="product-price-unit">/ kg</span></div>
+      </div>
+      <div class="product-actions">
+        <div class="qty-control">
+          <button type="button" class="qty-dec" data-i18n-attr="aria-label:menu.qty.dec" aria-label="Diminuir">−</button>
+          <input type="number" class="qty-input" value="${qty}" step="0.5" min="0.5" />
+          <button type="button" class="qty-inc" data-i18n-attr="aria-label:menu.qty.inc" aria-label="Aumentar">+</button>
+        </div>
+        <button type="button" class="btn-add ${inCart ? 'added' : ''}">
+          <i class="ti ti-${inCart ? 'check' : 'plus'}" aria-hidden="true"></i>
+          ${inCart ? t('menu.added') : t('menu.add')}
+        </button>
+      </div>
+    </article>
+  `;
+}
+
+// =================================================================
+// PRODUCT INTERACTIONS
+// =================================================================
+function attachProductListeners() {
+  document.querySelectorAll('.product').forEach(card => {
+    const id = card.dataset.id;
+    const dec = card.querySelector('.qty-dec');
+    const inc = card.querySelector('.qty-inc');
+    const input = card.querySelector('.qty-input');
+    const add = card.querySelector('.btn-add');
+
+    dec.addEventListener('click', () => {
+      let v = parseFloat(input.value) || 0.5;
+      v = Math.max(0.5, v - 0.5);
+      input.value = v;
+    });
+    inc.addEventListener('click', () => {
+      let v = parseFloat(input.value) || 0.5;
+      v += 0.5;
+      input.value = v;
+    });
+    input.addEventListener('change', () => {
+      let v = parseFloat(input.value) || 0.5;
+      if (v < 0.5) v = 0.5;
+      input.value = v;
+      if (cart.has(id)) {
+        cart.set(id, v);
+        updateOrderBar();
+      }
+    });
+    add.addEventListener('click', () => {
+      const v = parseFloat(input.value) || 1;
+      if (cart.has(id)) {
+        cart.delete(id);
+      } else {
+        cart.set(id, v);
+      }
+      render();
+      updateOrderBar();
+    });
+  });
+}
+
+// =================================================================
+// ORDER BAR
+// =================================================================
+function updateOrderBar() {
+  const bar = document.getElementById('orderBar');
+  if (cart.size === 0) {
+    bar.classList.remove('visible');
+    return;
+  }
+  bar.classList.add('visible');
+
+  let total = 0;
+  let count = 0;
+  cart.forEach((qty, id) => {
+    const p = products.find(x => x.id === id);
+    if (p) {
+      total += unitPrice(p) * qty;
+      count++;
+    }
+  });
+
+  const productWord = count === 1 ? t('menu.order.product') : t('menu.order.products');
+  document.getElementById('orderCount').innerHTML = `${count} ${productWord}`;
+  document.getElementById('orderTotal').textContent = total.toFixed(2).replace('.', ',') + ' €';
+
+  // WhatsApp link
+  let msg = `👋 ${t('menu.wa.greeting')}\n\n`;
+  cart.forEach((qty, id) => {
+    const p = products.find(x => x.id === id);
+    if (p) {
+      msg += `• ${p.name} — ${qty} kg\n`;
+    }
+  });
+  msg += `\n💰 ${t('menu.wa.total')} ${total.toFixed(2).replace('.', ',')} €\n\n${t('menu.wa.closing')}`;
+  const url = `https://wa.me/351934243797?text=${encodeURIComponent(msg)}`;
+  document.getElementById('btnSend').href = url;
+}
+
+// =================================================================
+// EVENT LISTENERS
+// =================================================================
+document.getElementById('search').addEventListener('input', render);
+document.querySelectorAll('.chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    render();
+  });
+});
+document.getElementById('btnClear').addEventListener('click', () => {
+  if (confirm(t('menu.order.confirm'))) {
+    cart.clear();
+    render();
+    updateOrderBar();
+  }
+});
+
+// Mobile nav toggle
+const toggle = document.querySelector('.mobile-toggle');
+const primary = document.querySelector('nav.primary');
+toggle?.addEventListener('click', () => {
+  const expanded = toggle.getAttribute('aria-expanded') === 'true';
+  toggle.setAttribute('aria-expanded', !expanded);
+  if (!expanded) {
+    primary.style.cssText = 'display:flex;position:absolute;top:100%;left:0;right:0;background:white;flex-direction:column;padding:20px;gap:16px;border-bottom:1px solid var(--line);';
+  } else {
+    primary.style.cssText = '';
+  }
+});
+
+// =================================================================
+// LANGUAGE — re-render produtos quando muda idioma
+// =================================================================
+window.onLangChange = function(lang) {
+  render();
+  updateOrderBar();
+};
+
+// Init
+window.initLangSwitcher();
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#1a4789"/>
+<stop offset="100%" stop-color="#0a2655"/>
+</linearGradient>
+<radialGradient id="glow" cx="50%" cy="40%" r="60%">
+<stop offset="0%" stop-color="#ffffff" stop-opacity="0.18"/>
+<stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+</defs>
+<rect width="400" height="300" fill="url(#g)"/>
+<rect width="400" height="300" fill="url(#glow)"/>
+<g fill="#ffffff" opacity="0.08">
+<circle cx="60" cy="60" r="3"/><circle cx="340" cy="100" r="2"/><circle cx="80" cy="220" r="2.5"/>
+<circle cx="320" cy="230" r="3"/><circle cx="180" cy="50" r="2"/><circle cx="240" cy="270" r="2.5"/>
+</g>
+<g transform="translate(200 150)" fill="#ffffff" opacity="0.85">
+<ellipse cx="0" cy="-20" rx="50" ry="40"/>
+<path d="M-35 15 Q-50 40 -45 65 Q-35 75 -25 60 M-15 20 Q-25 50 -15 70 M0 22 Q-5 55 5 75 M15 20 Q25 50 15 70 M35 15 Q50 40 45 65 Q35 75 25 60" stroke="#ffffff" stroke-width="6" fill="none"/>
+<circle cx="-15" cy="-30" r="4" fill="#1a4789"/>
+<circle cx="15" cy="-30" r="4" fill="#1a4789"/>
+</g>
+<text x="200" y="265" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="22" fill="#ffffff" opacity="0.95">Polvo</text>
+</svg>
