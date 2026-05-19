@@ -951,7 +951,7 @@ function renderProduct(p) {
       <div class="product-actions">
         <div class="qty-control">
           <button type="button" class="qty-dec" data-i18n-attr="aria-label:menu.qty.dec" aria-label="Diminuir">−</button>
-          <input type="number" class="qty-input" value="${qty}" step="0.5" min="0.5" />
+          <input type="number" class="qty-input" value="${qty}" step="1" min="1" />
           <button type="button" class="qty-inc" data-i18n-attr="aria-label:menu.qty.inc" aria-label="Aumentar">+</button>
         </div>
         <button type="button" class="btn-add ${inCart ? 'added' : ''}">
@@ -975,18 +975,18 @@ function attachProductListeners() {
     const add = card.querySelector('.btn-add');
 
     dec.addEventListener('click', () => {
-      let v = parseFloat(input.value) || 0.5;
-      v = Math.max(0.5, v - 0.5);
+      let v = parseInt(input.value, 10) || 1;
+      v = Math.max(1, v - 1);
       input.value = v;
     });
     inc.addEventListener('click', () => {
-      let v = parseFloat(input.value) || 0.5;
-      v += 0.5;
+      let v = parseInt(input.value, 10) || 1;
+      v += 1;
       input.value = v;
     });
     input.addEventListener('change', () => {
-      let v = parseFloat(input.value) || 0.5;
-      if (v < 0.5) v = 0.5;
+      let v = parseInt(input.value, 10) || 1;
+      if (v < 1) v = 1;
       input.value = v;
       if (cart.has(id)) {
         cart.set(id, v);
